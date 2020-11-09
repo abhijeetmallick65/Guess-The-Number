@@ -4,6 +4,7 @@ const Domstring = {
   Guess: document.querySelector('.guess'),
   Message: document.querySelector('.message'),
   Score: document.querySelector('.score'),
+  Body: document.querySelector(body),
 };
 
 const SecretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -22,6 +23,7 @@ Domstring.Check.addEventListener('click', function () {
       Domstring.Message.textContent = '⛔ No Number !';
     } else if (guess === SecretNumber) {
       Domstring.Message.textContent = '🎉 You Won The Game';
+      Domstring.body.style.backgroundColor = '#60b347';
     } else if (guess > SecretNumber) {
       if (score > 1) {
         Domstring.Message.textContent = '📈 Too High !';
